@@ -1,0 +1,10 @@
+Package: com.jakeashacks.say
+Name: say
+Depends: 
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: Jake James
+Author: Jake James
+Section: System
+Tag: role::hacker
