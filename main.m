@@ -8,8 +8,6 @@ int main(int argc, char **argv, char **envp) {
 	}
 	CPDistributedMessagingCenter *messagingCenter;
 	messagingCenter = [CPDistributedMessagingCenter centerNamed:@"com.jakeashacks.saycenter"];
-
 	[messagingCenter sendMessageAndReceiveReplyName:@"whattosay" userInfo:[NSDictionary dictionaryWithObject: [NSString stringWithFormat:@"%s", argv[1]] forKey:@"message"]];
-
 	return 0;
 }
