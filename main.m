@@ -6,10 +6,14 @@ int main(int argc, char **argv, char **envp) {
 		printf("	%s somethingToSay\n", argv[0]);
 		return -1;
 	}
-	CPDistributedMessagingCenter *messagingCenter;
-	messagingCenter = [CPDistributedMessagingCenter centerNamed:@"com.jakeashacks.saycenter"];
+	CPDistributedMessagingCenter *messagingCenter = [CPDistributedMessagingCenter centerNamed:@"com.jakeashacks.saycenter"];
+    
+    NSMutableArray *args = [NSMutableArray array];
+    for (int i = 1; i < argc; i++) {
+        [args addObject:[[NSString alloc] initWithUTF8String:argv[i]]];
+    }
 
-	[messagingCenter sendMessageAndReceiveReplyName:@"whattosay" userInfo:[NSDictionary dictionaryWithObject: [NSString stringWithFormat:@"%s", argv[1]] forKey:@"message"]];
+	[messagingCenter sendMessageAndReceiveReplyName:@"whattosay" userInfo:[NSDictionary dictionaryWithObject:[args componentsJoinedByString:@" "] forKey:@"message"]];
 
 	return 0;
 }
