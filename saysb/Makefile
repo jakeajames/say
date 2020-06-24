@@ -1,3 +1,7 @@
+TARGET ?= iphone:clang:13.0:10.0
+ARCHS ?= arm64 arm64e
+DEBUG ?= no
+
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = saySB
