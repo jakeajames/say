@@ -1,4 +1,4 @@
-TARGET ?= iphone:clang:13.0:10.0
+TARGET ?= iphone:clang:latest:10.0
 ARCHS ?= arm64 arm64e
 DEBUG ?= no
 
@@ -12,4 +12,4 @@ saySB_PRIVATE_FRAMEWORKS = AppSupport
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
-	install.exec "killall -9 SpringBoard"
+	install.exec "sbreload"
