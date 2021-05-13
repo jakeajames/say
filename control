@@ -3,7 +3,7 @@ Name: say
 Depends: 
 Version: 0.0.3
 Architecture: iphoneos-arm
-Description: "say" command for iOS devices. Make Siri speak anything you want from command line. iOS 7-11. Usage: say "your text here" (Must use quotes when message has spaces)
+Description: "say" command for iOS devices. Make Siri speak anything you want from command line. iOS 7+. Usage: say "your text here" (Must use quotes when message has spaces)
 Maintainer: Jake James
 Author: Jake James
 Section: System
