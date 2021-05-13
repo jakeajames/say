@@ -27,13 +27,13 @@ int main(int argc, char **argv, char **envp) {
 			printUsage();
 			exit(EXIT_SUCCESS);
 		}
-		message = [NSString stringWithFormat:@"%s", argv[1]];
+		message = [NSString stringWithFormat:@"%@",[NSString stringWithUTF8String:argv[1]]];
 	} else {
 		int opt;
 		while ((opt = getopt(argc, argv, "m:l:h")) != -1) {
 			switch (opt) {
 				case 'm':
-					message = [NSString stringWithFormat:@"%s", strdup(optarg)];
+					message = [NSString stringWithFormat:@"%@", [NSString stringWithUTF8String:strdup(optarg)]];
 					break;
 				case 'l':
 					lang = [NSString stringWithFormat:@"%s", strdup(optarg)];
